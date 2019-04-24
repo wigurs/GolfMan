@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:GolfMan"
+             x:Class="GolfMan.Views.GolfPage"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:ScoreViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Padding="5,0,5,0" RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Tranås Golf Club" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="12"  FontSize="Default" HorizontalOptions="StartAndExpand" Margin="0,6,0,0" />
+
+            <Label Text="{Binding PlayerNameDisplay}" Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan="6" HorizontalOptions ="StartAndExpand" Margin="0,6,0,0" />
+            <Label Text="{Binding PlayerGolfIDDisplay}" Grid.Row ="1" Grid.Column="6" Grid.ColumnSpan="6" HorizontalOptions="EndAndExpand"  Margin="0,6,0,0" />
+
+            <Label Text="{Binding PlayerHcpDisplay}" Grid.Row ="2" Grid.Column="0" Grid.ColumnSpan="6" HorizontalOptions ="StartAndExpand" Margin="0,6,0,0" />
+            <Label Text="{Binding PlayHcpDisplay}" Grid.Row ="2" Grid.Column="6" Grid.ColumnSpan="6" HorizontalOptions="EndAndExpand"  Margin="0,6,0,0" />
+
+            <Button Text="Hole - " Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4"  Command="{Binding MinusClickedCommand }"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" FontSize="Default" HorizontalOptions="FillAndExpand"  BackgroundColor="{StaticResource GolfManLightYellowColor}" Margin="0,6,0,0" />
+            <Button Text="{Binding HoleNoDisplay}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="4" Command="{Binding HoleNoClickedCommand }"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" FontSize="Default" HorizontalOptions="FillAndExpand"  BackgroundColor="{StaticResource GolfManLightGreenColor}"  Margin="0,6,0,0" />
+            <Button Text="Hole + " Grid.Row="3" Grid.Column="8" Grid.ColumnSpan="4" Command="{Binding PlusClickedCommand }" BorderWidth="3" BorderColor="Gray" BorderRadius="10" FontSize="Default" HorizontalOptions="FillAndExpand"  BackgroundColor="{StaticResource GolfManLightBlueColor}"  Margin="0,6,0,0" />
+
+            <Button Text="{Binding WhiteDisplay}" Grid.Row ="4" Grid.Column="1" Grid.ColumnSpan="2"  Command="{Binding WhiteClickedCommand }"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" HorizontalOptions="FillAndExpand"  BackgroundColor="White"  Margin="0,6,0,0" />
+            <Button Text="{Binding YellowDisplay}" Grid.Row ="4" Grid.Column="3" Grid.ColumnSpan="2" Command="{Binding YellowClickedCommand }"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" HorizontalOptions="FillAndExpand" BackgroundColor="Yellow"  Margin="0,6,0,0" />
+            <Button Text="{Binding BlueDisplay}" Grid.Row ="4" Grid.Column="5" Grid.ColumnSpan="2" Command="{Binding BlueClickedCommand }"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" HorizontalOptions="FillAndExpand"  BackgroundColor="LightBlue"  Margin="0,6,0,0" />
+            <Button Text="{Binding RedDisplay}" Grid.Row ="4" Grid.Column="7" Grid.ColumnSpan="2" Command="{Binding RedClickedCommand }"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" HorizontalOptions="FillAndExpand"  BackgroundColor="IndianRed"  Margin="0,6,0,0" />
+            <Button Text="{Binding OrangeDisplay}" Grid.Row ="4" Grid.Column="9" Grid.ColumnSpan="2" Command="{Binding OrangeClickedCommand }"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" HorizontalOptions="FillAndExpand"  BackgroundColor="Orange"  Margin="0,6,0,0" />
+
+            <Button Text="{Binding BirdieDisplay}" Grid.Row ="5" Grid.Column="0" Grid.ColumnSpan="4" Command="{Binding BirdieCLickedCommand }" BorderWidth="3" BorderColor="Gray" BorderRadius="10" FontSize="Default" HorizontalOptions="FillAndExpand"  BackgroundColor="{StaticResource GolfManLightYellowColor}" Margin="0,6,0,6" />
+            <Button Text="{Binding ParDisplay}" Grid.Row ="5" Grid.Column="4" Grid.ColumnSpan="4" Command="{Binding ParClickedCommand }" BorderWidth="3" BorderColor="Gray" BorderRadius="10" FontSize="Default" HorizontalOptions="FillAndExpand"  BackgroundColor="{StaticResource GolfManLightGreenColor}" Margin="0,6,0,6" />
+            <Button Text="{Binding BogeyDisplay}" Grid.Row ="5" Grid.Column="8" Grid.ColumnSpan="4"  Command="{Binding BogeyClickedCommand}"  BorderWidth="3" BorderColor="Gray" BorderRadius="10" FontSize="Default" HorizontalOptions="FillAndExpand"  BackgroundColor="{StaticResource GolfManLightBlueColor}" Margin="0,6,0,6" />
+
+            <StackLayout Grid.Row="6" Grid.ColumnSpan="12" BackgroundColor="LightGray" Orientation="Horizontal"  />
+            <Label Text="Hole" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" FontSize="Default"  />
+            <Label Text="1" Grid.Row="6" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="2" Grid.Row="6" Grid.Column="3" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="3" Grid.Row="6" Grid.Column="4" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="4" Grid.Row="6" Grid.Column="5" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="5" Grid.Row="6" Grid.Column="6" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="6" Grid.Row="6" Grid.Column="7" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="7" Grid.Row="6" Grid.Column="8" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="8" Grid.Row="6" Grid.Column="9" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="9" Grid.Row="6" Grid.Column="10" HorizontalTextAlignment="Center" FontSize="Default" />
+
+            <StackLayout Grid.Row="7" Grid.ColumnSpan="12" BackgroundColor="White" Orientation="Horizontal" />
+            <Label Text="Score" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" FontSize="Default" BackgroundColor="LightGray" />
+            <Label Text="{Binding ScoreDisplay1}" Grid.Row="7" Grid.Column="2"  HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay2}" Grid.Row="7" Grid.Column="3"  HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="{Binding ScoreDisplay3}" Grid.Row="7" Grid.Column="4" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="{Binding ScoreDisplay4}" Grid.Row="7" Grid.Column="5" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="{Binding ScoreDisplay5}" Grid.Row="7" Grid.Column="6" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="{Binding ScoreDisplay6}" Grid.Row="7" Grid.Column="7" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="{Binding ScoreDisplay7}" Grid.Row="7" Grid.Column="8" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="{Binding ScoreDisplay8}" Grid.Row="7" Grid.Column="9" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="{Binding ScoreDisplay9}" Grid.Row="7" Grid.Column="10" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold"  />
+            <Label Text="" Grid.Row="7" Grid.Column="11" BackgroundColor="LightGray" />
+
+            <StackLayout Grid.Row="8" Grid.ColumnSpan="12" BackgroundColor="LightGray" Orientation="Horizontal" />
+            <Label Text="Hole" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalTextAlignment="Start" FontSize="Default" />
+            <Label Text="10" Grid.Row="8" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="11" Grid.Row="8" Grid.Column="3" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="12" Grid.Row="8" Grid.Column="4" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="13" Grid.Row="8" Grid.Column="5" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="14" Grid.Row="8" Grid.Column="6" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="15" Grid.Row="8" Grid.Column="7" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="16" Grid.Row="8" Grid.Column="8" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="17" Grid.Row="8" Grid.Column="9" HorizontalTextAlignment="Center" FontSize="Default" />
+            <Label Text="18" Grid.Row="8" Grid.Column="10" HorizontalTextAlignment="Center" FontSize="Default" />
+
+            <StackLayout Grid.Row="9" Grid.ColumnSpan="12" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="FillAndExpand" />
+            <Label Text="Score" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" FontSize="Default" BackgroundColor="LightGray" />
+            <Label Text="{Binding ScoreDisplay10}" Grid.Row="9" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay11}" Grid.Row="9" Grid.Column="3" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay12}" Grid.Row="9" Grid.Column="4" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay13}" Grid.Row="9" Grid.Column="5" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay14}" Grid.Row="9" Grid.Column="6" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay15}" Grid.Row="9" Grid.Column="7" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay16}" Grid.Row="9" Grid.Column="8" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay17}" Grid.Row="9" Grid.Column="9" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreDisplay18}" Grid.Row="9" Grid.Column="10" HorizontalTextAlignment="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="" Grid.Row="9" Grid.Column="11" BackgroundColor="LightGray" />
+
+            <StackLayout Grid.Row="11" Grid.ColumnSpan="12" BackgroundColor="LightGray" Orientation="Horizontal" HorizontalOptions="FillAndExpand" />
+            <Label Text="Out" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" />
+            <Label Text="In" Grid.Column="2" Grid.Row="11" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" />
+            <Label Text="Brutto" Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" />
+            <Label Text="+/-" Grid.Column="6" Grid.Row="11" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" />
+            <Label Text="Netto" Grid.Column="8" Grid.Row="11" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" />
+            <Label Text="Points" Grid.Column="10" Grid.Row="11" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" />
+
+            <StackLayout Grid.Row="10" Grid.ColumnSpan="12" BackgroundColor="LightGray" Orientation="Horizontal" HorizontalOptions="FillAndExpand" />
+            <Label Text="--Current Strokes--" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="6"  HorizontalOptions="Center" FontSize="Default" />
+            <Label Text="--Estimated Result-- " Grid.Row="10" Grid.Column="6" Grid.ColumnSpan="6"  HorizontalOptions="EndAndExpand" FontSize="Default" />
+
+            <StackLayout Grid.Row="12" Grid.ColumnSpan="12" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="FillAndExpand" />
+            <Label Text="{Binding ScoreOutDisplay}" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreInDisplay}" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreBruttoDisplay}" Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreHcpDisplay}" Grid.Row="12" Grid.Column="6" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding ScoreNettoDisplay}" Grid.Row="12" Grid.Column="8" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" FontAttributes="Bold" />
+            <Label Text="{Binding PointsDisplay}" Grid.Row="12" Grid.Column="10" Grid.ColumnSpan="2"  HorizontalOptions="Center" FontSize="Default" FontAttributes="Bold" />
+
+            <Label Grid.Row= "14" Grid.Column="0" Grid.ColumnSpan="12"  LineBreakMode="WordWrap" Text="Advertizing area line 1"  FontSize="Default" HorizontalOptions="StartAndExpand"  />
+            <Label Grid.Row= "15" Grid.Column="0" Grid.ColumnSpan="12"  LineBreakMode="WordWrap" Text="Advertizing area line 2"  FontSize="Default" HorizontalOptions="StartAndExpand"  />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
